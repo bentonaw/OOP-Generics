@@ -58,8 +58,8 @@ namespace OOP_Generics
             Console.WriteLine("\r\nPop method\r\n");
             while (employeeStack.Count > 0)
             {
-               Employee employee = employeeStack.Pop();
-               Console.WriteLine($"Id: {employee.Id}\r\nName: {employee.Name}\r\nGender: {employee.Gender}\r\nSalary: {employee.Salary}");
+                Employee employee = employeeStack.Pop();
+                Console.WriteLine($"Id: {employee.Id}\r\nName: {employee.Name}\r\nGender: {employee.Gender}\r\nSalary: {employee.Salary}");
             }
 
             employeeStack.Push(employee1);
@@ -88,6 +88,39 @@ namespace OOP_Generics
             {
                 Console.WriteLine("employee3 is not in stack");
             }
+
+            //Part 2
+
+            //contains
+            List<Employee> employeeList = new List<Employee>
+            {
+                employee1,
+                employee2,
+                employee3,
+                employee4,
+                employee5,
+            };
+            if (employeeList.Contains(employee4))
+            {
+                Console.WriteLine("employee4 object exists in the list");
+            }
+            else
+            {
+                Console.WriteLine("employee4 object does not exist in the list");
+            }
+
+            //find
+            Employee maleEmployee = employeeList.Find(maleEmployee => maleEmployee.Gender == "Male");
+            Console.WriteLine($"Id: {maleEmployee.Id}\r\nName: {maleEmployee.Name}\r\nGender: {maleEmployee.Gender}\r\nSalary: {maleEmployee.Salary}");
+            Console.WriteLine();
+
+            //findall
+            List<Employee> maleEmployees = employeeList.FindAll(maleEmployees => maleEmployees.Gender == "Male");
+            foreach (Employee employee in maleEmployees) 
+            {
+                Console.WriteLine($"Id: {employee.Id}\r\nName: {employee.Name}\r\nGender: {employee.Gender}\r\nSalary: {employee.Salary}");
+            }
+
         }
     }
 }
