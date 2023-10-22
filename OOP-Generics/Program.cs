@@ -79,6 +79,15 @@ namespace OOP_Generics
                 Console.WriteLine($"Id: {employee.Id}\r\nName: {employee.Name}\r\nGender: {employee.Gender}\r\nSalary: {employee.Salary}");
                 Console.WriteLine($"There are {employeeStack.Count} employees left in the stack.");
             }
+            Console.WriteLine();
+            if (employeeStack.Contains(employee3))
+            {
+                Console.WriteLine("employee3 is in stack");
+            }
+            else
+            {
+                Console.WriteLine("employee3 is not in stack");
+            }
         }
     }
 }
