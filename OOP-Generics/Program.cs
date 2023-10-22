@@ -74,16 +74,16 @@ namespace OOP_Generics
 
             //peeks at last/top object in stack
             Console.WriteLine("\r\nPeek method\r\n");
-            {
-                Employee employee = employeeStack.Peek();
-                Console.WriteLine($"Id: {employee.Id}\r\nName: {employee.Name}\r\nGender: {employee.Gender}\r\nSalary: {employee.Salary}");
-                Console.WriteLine($"There are {employeeStack.Count} employees left in the stack.");
-            }
-            {
-                Employee employee = employeeStack.Peek();
-                Console.WriteLine($"Id: {employee.Id}\r\nName: {employee.Name}\r\nGender: {employee.Gender}\r\nSalary: {employee.Salary}");
-                Console.WriteLine($"There are {employeeStack.Count} employees left in the stack.");
-            }
+  
+            Employee peekEmployee = employeeStack.Peek();
+            Console.WriteLine($"Id: {peekEmployee.Id}\r\nName: {peekEmployee.Name}\r\nGender: {peekEmployee.Gender}\r\nSalary: {peekEmployee.Salary}");
+            Console.WriteLine($"There are {employeeStack.Count} employees left in the stack.");
+            
+            
+            Employee peekemployee2 = employeeStack.Peek();
+            Console.WriteLine($"Id: {peekemployee2.Id}\r\nName: {peekemployee2.Name}\r\nGender: {peekemployee2.Gender}\r\nSalary: {peekemployee2.Salary}");
+            Console.WriteLine($"There are {employeeStack.Count} employees left in the stack.");
+            
             Console.WriteLine();
             // checks if object is in stack
             if (employeeStack.Contains(employee3))
@@ -106,6 +106,7 @@ namespace OOP_Generics
                 employee4,
                 employee5,
             };
+
             if (employeeList.Contains(employee4))
             {
                 Console.WriteLine("employee4 object exists in the list");
