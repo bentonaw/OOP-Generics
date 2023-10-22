@@ -6,6 +6,7 @@ namespace OOP_Generics
     {
         static void Main(string[] args)
         {
+            //instantiating 5 employees
             Employee employee1 = new Employee()
             {
                 Id = 1,
@@ -41,7 +42,7 @@ namespace OOP_Generics
                 Gender = "Male",
                 Salary = 40000,
             };
-
+            //creating stack with the 5 objects
             Stack<Employee> employeeStack = new Stack<Employee>();
             employeeStack.Push(employee1);
             employeeStack.Push(employee2);
@@ -49,25 +50,29 @@ namespace OOP_Generics
             employeeStack.Push(employee4);
             employeeStack.Push(employee5);
 
+            //prints all object in stack
             foreach (Employee employee in employeeStack)
             {
                 Console.WriteLine($"Id: {employee.Id}\r\nName: {employee.Name}\r\nGender: {employee.Gender}\r\nSalary: {employee.Salary}");
                 Console.WriteLine($"There are {employeeStack.Count} employees left in the stack.");
             }
-
+            //takes out each object from stack
             Console.WriteLine("\r\nPop method\r\n");
             while (employeeStack.Count > 0)
             {
                 Employee employee = employeeStack.Pop();
                 Console.WriteLine($"Id: {employee.Id}\r\nName: {employee.Name}\r\nGender: {employee.Gender}\r\nSalary: {employee.Salary}");
+                Console.WriteLine($"There are {employeeStack.Count} employees left in the stack.");
             }
 
+            //adds objects to stack again
             employeeStack.Push(employee1);
             employeeStack.Push(employee2);
             employeeStack.Push(employee3);
             employeeStack.Push(employee4);
             employeeStack.Push(employee5);
 
+            //peeks at last/top object in stack
             Console.WriteLine("\r\nPeek method\r\n");
             {
                 Employee employee = employeeStack.Peek();
@@ -80,6 +85,7 @@ namespace OOP_Generics
                 Console.WriteLine($"There are {employeeStack.Count} employees left in the stack.");
             }
             Console.WriteLine();
+            // checks if object is in stack
             if (employeeStack.Contains(employee3))
             {
                 Console.WriteLine("employee3 is in stack");
